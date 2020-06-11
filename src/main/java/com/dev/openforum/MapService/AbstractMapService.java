@@ -1,16 +1,22 @@
 package com.dev.openforum.MapService;
 
+import com.dev.openforum.Model.Template;
+
+
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-public abstract class AbstractMapService<T , ID extends Long > {
+public abstract class AbstractMapService<T extends Template , ID extends Long > {
 
     Map<Long,T> db = new HashMap<>();
 
     T save(T object){
-        return db.put(getId(), object);
+        if(object.getId() == null)
+            object.setId(getId());
+         db.put(getId(), object);
+         return object;
     }
 
     void delete(T object){

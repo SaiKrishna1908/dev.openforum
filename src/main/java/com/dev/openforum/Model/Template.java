@@ -1,5 +1,6 @@
 package com.dev.openforum.Model;
 
+
 public class Template {
 
     private Long id;
