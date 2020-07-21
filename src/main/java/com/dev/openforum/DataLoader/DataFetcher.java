@@ -17,6 +17,11 @@ public class DataFetcher implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
+//        loadTemplateData();
+
+    }
+
+    private void loadTemplateData() {
         Template template = new Template();
         template.setDescription("Cut all tree on earth");
         template.setPriority(2);
@@ -35,6 +40,5 @@ public class DataFetcher implements CommandLineRunner {
         template2.setDescription("Mine all coal in India");
         template2.setPriority(1);
         templateService.save(template2);
-
     }
 }
