@@ -10,13 +10,15 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.Route;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Profile;
 
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
 
 
-
-@Route
+@Route()
 public class View extends VerticalLayout{
 
     @Autowired
@@ -40,7 +42,11 @@ public class View extends VerticalLayout{
         grid.setColumns("priority", "description");
 
 
-        grid.setItems(new ArrayList<>(templateService.findAll()));
+        List<Template> templateData = new ArrayList<>(templateService.findAll());
+        templateData.sort( (A,B) -> {
+            return A.getPriority() - B.getPriority();
+        });
+        grid.setItems(templateData);
 
         TextField description = new TextField();
         description.setLabel("New Task");
@@ -60,13 +66,14 @@ public class View extends VerticalLayout{
                 Template template = new Template();
                 template.setDescription(description.getValue());
                 template.setPriority(Integer.parseInt(priority.getValue()));
-                templateService.save(template);
-                description.clear();
-                priority.clear();
+                if(template.getDescription().length() > 0 && template  != null) {
+                    templateService.save(template);
+                    description.clear();
+                    priority.clear();
 
-                grid.setItems(templateService.findAll());
+                    grid.setItems(templateService.findAll());
 
-
+                }
             }
             catch (Exception e){
                 e.printStackTrace();

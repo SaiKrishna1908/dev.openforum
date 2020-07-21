@@ -1,11 +1,13 @@
 package com.dev.openforum.Model;
 
 
+
 public class Template {
 
     private Long id;
     private int priority;
     private String description;
+
 
     public Long getId() {
         return id;
