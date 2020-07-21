@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -Dserver.port=$PORT -jar target/openforum-0.0.1-SNAPSHOT.jar
+web: java -jar target/openforum-0.0.1-SNAPSHOT.jar $PORT
