@@ -18,7 +18,7 @@ import java.util.List;
 import java.util.Set;
 
 
-@Route()
+@Route("/")
 public class View extends VerticalLayout{
 
     @Autowired

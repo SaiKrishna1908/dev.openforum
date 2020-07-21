@@ -1,1 +1,1 @@
-web: java -Dserver.port=$PORT $JAVA_OPTS -cp target/classes:target/dependency/* com.dev.openforum.OpenforumApplication
+web: java -jar target/openforum-0.0.1-SNAPSHOT.jar $PORT
