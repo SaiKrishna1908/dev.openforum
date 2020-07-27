@@ -17,7 +17,7 @@ public class DataFetcher implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-//        loadTemplateData();
+        loadTemplateData();
 
     }
 
