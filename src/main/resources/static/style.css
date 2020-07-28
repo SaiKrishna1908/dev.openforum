@@ -1,0 +1,20 @@
+
+@media screen and (max-width: 575.98px) {
+    a.btn.btn-primary {
+        display: block;
+        margin: 1px;
+    }
+
+}
+
+@media (min-width: 755px) and (max-width: 900px){
+
+    a.btn.btn-primary{
+        display: block;
+        margin: 1px;
+    }
+}
+
+div.row{
+    margin: 10px;
+}

@@ -2,11 +2,13 @@ package com.dev.openforum.MapService;
 
 import com.dev.openforum.Model.Template;
 import com.dev.openforum.Service.TemplateService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
+@Profile("map")
 public class TemplateMapService extends AbstractMapService<Template, Long> implements TemplateService {
 
 

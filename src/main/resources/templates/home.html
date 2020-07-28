@@ -6,8 +6,8 @@
 
     <link rel="stylesheet" th:href="@{/webjars/bootstrap/4.5.0/css/bootstrap.min.css}">
     <script rel="script" th:src="@{/webjars/bootstrap/3.5.1/js/bootstrap.min.js}"></script>
-
-<!--    <script rel="script" th:src="@{/webjars/jquery/3.4.0/jquery.min.js}"> </script>-->
+    <link rel="stylesheet" th:href="@{/style.css}">
+    <script rel="script" th:src="@{/webjars/jquery/3.4.0/jquery.min.js}"> </script>
 </head>
 
 <style>
@@ -20,16 +20,55 @@
 </style>
 <body>
 
-<div class="container " style="margin-top: 5em;">
-    <div class="row">
-        <div class="col-6 offset-3">
+<div style="display: flex; justify-content: center; align-items: center; height: 90vh;" >
+<div class="container-fluid" style="margin-top: 5em;">
 
-                <table>
-                    <thead class="thead-dark">Test</thead>
-                    <tbody>
+    <div class="row" style="margin: 5px;">
+        <div class="col-12 col-md-6 offset-md-3 col-sm-12">
+            <form th:object="${task}" method="post" th:action="@{/}" action="/" >
+<!--                <input type="text" class="form-control" th:value="*{description}" th:label="Desciption">-->
+<!--                <input type="number" class="form-control" th:value="*{priority}" th:label="Priority">-->
+                    <div class="row">
+                        <div class="col">
+                        <label for="desc"></label>
+                        <input type="text" class="form-control" id="desc" placeholder="Desciption"
+                        th:value="*{description}">
+                        </div>
+
+                        <div class="col">
+                            <label for="prior"></label>
+                            <input type="number" class="form-control" id="prior" placeholder="Priority"
+                            th:value="*{priority}">
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-4  align-items-center" >
+                            <button class=" btn btn-primary form-control" th:text="Add" th:name="Add"></button>
+                        </div>
+                    </div>
+
+            </form>
+        </div>
+    </div>
+    <!-- Display Task's Todo   -->
+    <div class="row">
+        <div class="col-12 col-md-6 offset-md-3 col-sm-12">
+
+                <table class="table">
+                    <thead class="text-right" >
+                    <tr><th><h1>Todo</h1></th>
+                    <th></th></tr>
+
+                    </thead>
+                    <tbody class="text-center">
                     <tr th:each="item : ${list}">
                         <!--/*@thymesVar id="description" type="com.dev.openforum.Model.Template"*/-->
                         <td th:text="${item.description}"></td>
+                        <td>
+                            <a href="#" class="btn btn-primary btn-group-sm ">Done</a>
+                            <a href="#" class="btn btn-primary btn-group-sm ">Delete</a>
+                        </td>
                     </tr>
                     </tbody>
 
@@ -41,7 +80,7 @@
 
 
 </div>
-
+</div>
 </body>
 
 
