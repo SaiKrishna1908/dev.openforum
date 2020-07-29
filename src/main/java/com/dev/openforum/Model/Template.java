@@ -16,8 +16,10 @@ public class Template {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private int priority;
-    private String description;
 
+    //todo : constrain that atleast 5 words should be present
+    private String description;
+    private String status = "in-progress";
 
     public Long getId() {
         return id;

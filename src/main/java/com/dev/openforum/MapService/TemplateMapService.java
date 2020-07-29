@@ -38,4 +38,9 @@ public class TemplateMapService extends AbstractMapService<Template, Long> imple
     public Set<Template> findAll() {
         return super.findAll();
     }
+
+    @Override
+    public Template setStatusDone(Long id) {
+        return null;
+    }
 }

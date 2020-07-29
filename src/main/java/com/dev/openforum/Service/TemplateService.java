@@ -11,4 +11,6 @@ public interface TemplateService {
     void delete(Template template);
 
     Set<Template> findAll();
+
+    Template setStatusDone(Long id);
 }
