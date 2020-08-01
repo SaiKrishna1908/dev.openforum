@@ -1,7 +1,11 @@
 package com.dev.openforum.Model;
 
 
+import com.sun.istack.NotNull;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.NonNull;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,6 +14,7 @@ import javax.persistence.Id;
 
 @Data
 @Entity
+@NoArgsConstructor
 public class Template {
 
     @Id
@@ -18,6 +23,8 @@ public class Template {
     private int priority;
 
     //todo : constrain that atleast 5 words should be present
+
+    @NonNull
     private String description;
     private String status = "in-progress";
 

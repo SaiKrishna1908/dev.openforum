@@ -3,6 +3,7 @@ package com.dev.openforum.Service;
 import com.dev.openforum.Model.Template;
 import com.dev.openforum.repository.TemplateRepository;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +15,7 @@ import java.util.Set;
 @Service
 @RequiredArgsConstructor
 @Profile("default")
+@Slf4j
 public class TemplateServiceImpl implements  TemplateService{
 
     private final TemplateRepository templateRepository;
@@ -43,7 +45,7 @@ public class TemplateServiceImpl implements  TemplateService{
         Optional<Template> templateOptional = templateRepository.findById(id);
 
 
-        if(!templateOptional.isPresent()){
+        if(templateOptional.isPresent()){
          Template  template = templateOptional.get();
             template.setStatus("Done");
             templateRepository.save(template);
@@ -51,5 +53,17 @@ public class TemplateServiceImpl implements  TemplateService{
         }
 
         return templateRepository.findById(id).get();
+    }
+
+    @Override
+    public void deleteById(Long id) {
+        Optional<Template> template = templateRepository.findById(id);
+
+        if(!template.isPresent()){
+            log.debug("Template Not found");
+        }
+        else{
+            templateRepository.deleteById(id);
+        }
     }
 }

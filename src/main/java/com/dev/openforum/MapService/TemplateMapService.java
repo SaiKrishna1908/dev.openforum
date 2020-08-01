@@ -43,4 +43,10 @@ public class TemplateMapService extends AbstractMapService<Template, Long> imple
     public Template setStatusDone(Long id) {
         return null;
     }
+
+
+    @Override
+    public void deleteById(Long id){
+
+    }
 }

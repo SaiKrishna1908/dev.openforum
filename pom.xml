@@ -61,11 +61,11 @@
                 </exclusion>
             </exclusions>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>com.h2database</groupId>-->
-<!--            <artifactId>h2</artifactId>-->
-<!--            <scope>runtime</scope>-->
-<!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>com.h2database</groupId>-->
+        <!--            <artifactId>h2</artifactId>-->
+        <!--            <scope>runtime</scope>-->
+        <!--        </dependency>-->
 
         <!--web jars        -->
 
@@ -75,43 +75,49 @@
             <version>4.5.0</version>
         </dependency>
 
-                <dependency>
-                    <groupId>org.webjars</groupId>
-                    <artifactId>jquery</artifactId>
-                    <version>3.4.0</version>
-                </dependency>
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>jquery</artifactId>
+            <version>3.4.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>font-awesome</artifactId>
+            <version>5.12.0</version>
+        </dependency>
 
 
     </dependencies>
 
-<!--    <dependencyManagement>-->
-<!--        <dependencies>-->
-<!--            <dependency>-->
-<!--                <groupId>com.vaadin</groupId>-->
-<!--                <artifactId>vaadin-bom</artifactId>-->
-<!--                <version>${vaadin.version}</version>-->
-<!--                <type>pom</type>-->
-<!--                <scope>import</scope>-->
-<!--            </dependency>-->
-<!--        </dependencies>-->
-<!--    </dependencyManagement>-->
+    <!--    <dependencyManagement>-->
+    <!--        <dependencies>-->
+    <!--            <dependency>-->
+    <!--                <groupId>com.vaadin</groupId>-->
+    <!--                <artifactId>vaadin-bom</artifactId>-->
+    <!--                <version>${vaadin.version}</version>-->
+    <!--                <type>pom</type>-->
+    <!--                <scope>import</scope>-->
+    <!--            </dependency>-->
+    <!--        </dependencies>-->
+    <!--    </dependencyManagement>-->
 
     <build>
         <plugins>
 
-<!--            <plugin>-->
-<!--                <groupId>com.vaadin</groupId>-->
-<!--                <artifactId>vaadin-maven-plugin</artifactId>-->
-<!--                <version>${vaadin.version}</version>-->
-<!--                <executions>-->
-<!--                    <execution>-->
-<!--                        <goals>-->
-<!--                            <goal>build-frontend</goal>-->
-<!--                        </goals>-->
-<!--                        <phase>compile</phase>-->
-<!--                    </execution>-->
-<!--                </executions>-->
-<!--            </plugin>-->
+            <!--            <plugin>-->
+            <!--                <groupId>com.vaadin</groupId>-->
+            <!--                <artifactId>vaadin-maven-plugin</artifactId>-->
+            <!--                <version>${vaadin.version}</version>-->
+            <!--                <executions>-->
+            <!--                    <execution>-->
+            <!--                        <goals>-->
+            <!--                            <goal>build-frontend</goal>-->
+            <!--                        </goals>-->
+            <!--                        <phase>compile</phase>-->
+            <!--                    </execution>-->
+            <!--                </executions>-->
+            <!--            </plugin>-->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
@@ -129,58 +135,58 @@
                     </execution>
                 </executions>
             </plugin>
-<!--            <plugin>-->
-<!--                <groupId>com.github.eirslett</groupId>-->
-<!--                <artifactId>frontend-maven-plugin</artifactId>-->
-<!--                &lt;!&ndash; Use the latest released version:-->
-<!--                https://repo1.maven.org/maven2/com/github/eirslett/frontend-maven-plugin/ &ndash;&gt;-->
-<!--                <version>1.9.1</version>-->
-<!--                <executions>-->
-<!--                    <execution>-->
-<!--                        <id>install node and npm</id>-->
-<!--                        <goals>-->
-<!--                            <goal>install-node-and-npm</goal>-->
-<!--                        </goals>-->
-<!--                        &lt;!&ndash; optional: default phase is "generate-resources" &ndash;&gt;-->
-<!--                        <phase>generate-resources</phase>-->
-<!--                    </execution>-->
-<!--                </executions>-->
-<!--                <configuration>-->
-<!--                    <nodeVersion>v12.13.0</nodeVersion>-->
-<!--                </configuration>-->
-<!--            </plugin>-->
+            <!--            <plugin>-->
+            <!--                <groupId>com.github.eirslett</groupId>-->
+            <!--                <artifactId>frontend-maven-plugin</artifactId>-->
+            <!--                &lt;!&ndash; Use the latest released version:-->
+            <!--                https://repo1.maven.org/maven2/com/github/eirslett/frontend-maven-plugin/ &ndash;&gt;-->
+            <!--                <version>1.9.1</version>-->
+            <!--                <executions>-->
+            <!--                    <execution>-->
+            <!--                        <id>install node and npm</id>-->
+            <!--                        <goals>-->
+            <!--                            <goal>install-node-and-npm</goal>-->
+            <!--                        </goals>-->
+            <!--                        &lt;!&ndash; optional: default phase is "generate-resources" &ndash;&gt;-->
+            <!--                        <phase>generate-resources</phase>-->
+            <!--                    </execution>-->
+            <!--                </executions>-->
+            <!--                <configuration>-->
+            <!--                    <nodeVersion>v12.13.0</nodeVersion>-->
+            <!--                </configuration>-->
+            <!--            </plugin>-->
 
         </plugins>
     </build>
 
-<!--    <profiles>-->
-<!--    <profile>-->
-<!--        <id>npm</id>-->
-<!--        <build>-->
-<!--            <plugins>-->
-<!--                <plugin>-->
-<!--                    <groupId>com.github.eirslett</groupId>-->
-<!--                    <artifactId>frontend-maven-plugin</artifactId>-->
-<!--                    &lt;!&ndash; Use the latest released version:-->
-<!--                    https://repo1.maven.org/maven2/com/github/eirslett/frontend-maven-plugin/ &ndash;&gt;-->
-<!--                    <version>1.9.1</version>-->
-<!--                    <executions>-->
-<!--                        <execution>-->
-<!--                            <id>install node and npm</id>-->
-<!--                            <goals>-->
-<!--                                <goal>install-node-and-npm</goal>-->
-<!--                            </goals>-->
-<!--                            &lt;!&ndash; optional: default phase is "generate-resources" &ndash;&gt;-->
-<!--                            <phase>generate-resources</phase>-->
-<!--                        </execution>-->
-<!--                    </executions>-->
-<!--                    <configuration>-->
-<!--                        <nodeVersion>v12.13.0</nodeVersion>-->
-<!--                    </configuration>-->
-<!--                </plugin>-->
-<!--            </plugins>-->
-<!--        </build>-->
-<!--    </profile>-->
-<!--    </profiles>-->
+    <!--    <profiles>-->
+    <!--    <profile>-->
+    <!--        <id>npm</id>-->
+    <!--        <build>-->
+    <!--            <plugins>-->
+    <!--                <plugin>-->
+    <!--                    <groupId>com.github.eirslett</groupId>-->
+    <!--                    <artifactId>frontend-maven-plugin</artifactId>-->
+    <!--                    &lt;!&ndash; Use the latest released version:-->
+    <!--                    https://repo1.maven.org/maven2/com/github/eirslett/frontend-maven-plugin/ &ndash;&gt;-->
+    <!--                    <version>1.9.1</version>-->
+    <!--                    <executions>-->
+    <!--                        <execution>-->
+    <!--                            <id>install node and npm</id>-->
+    <!--                            <goals>-->
+    <!--                                <goal>install-node-and-npm</goal>-->
+    <!--                            </goals>-->
+    <!--                            &lt;!&ndash; optional: default phase is "generate-resources" &ndash;&gt;-->
+    <!--                            <phase>generate-resources</phase>-->
+    <!--                        </execution>-->
+    <!--                    </executions>-->
+    <!--                    <configuration>-->
+    <!--                        <nodeVersion>v12.13.0</nodeVersion>-->
+    <!--                    </configuration>-->
+    <!--                </plugin>-->
+    <!--            </plugins>-->
+    <!--        </build>-->
+    <!--    </profile>-->
+    <!--    </profiles>-->
 
 </project>

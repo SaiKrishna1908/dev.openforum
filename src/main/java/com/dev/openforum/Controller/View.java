@@ -44,6 +44,14 @@ class TemplateController{
     @RequestMapping(value = "/done/{id}",method = RequestMethod.GET)
     public String doneTemplate(@PathVariable Long id, Model model){
         templateService.setStatusDone(id);
+
+        model.addAttribute("list", templateService.findAll());
+        return "redirect:/todo";
+    }
+
+    @RequestMapping(value = "/delete/{id}" ,method = RequestMethod.GET)
+    public String deleteTemplate(@PathVariable Long id, Model model){
+        templateService.deleteById(id);
         return "redirect:/todo";
     }
 }
