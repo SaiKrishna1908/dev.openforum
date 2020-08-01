@@ -26,11 +26,11 @@
 </style>
 <body>
 
-<div style="display: flex; justify-content: center; align-items: center; height: 90vh;">
+<div style="display: flex; justify-content: center; align-items: center; " class="flex-parent">
     <div class="container-fluid" style="margin-top: 5em;">
 
         <div class="row" style="margin: 5px;">
-            <div class="col-12 col-md-6 offset-md-3 col-sm-12">
+            <div class="col-12 col-md-6  offset-md-3 col-sm-12">
                 <form th:object="${task}" method="post" th:action="@{/}" action="/">
                     <!--                <input type="text" class="form-control" th:value="*{description}" th:label="Desciption">-->
                     <!--                <input type="number" class="form-control" th:value="*{priority}" th:label="Priority">-->
@@ -63,7 +63,7 @@
         <div class="row">
             <div class="col-12 col-md-6 offset-md-3 col-sm-12">
 
-                <table class="table">
+                <table class="table table-responsive">
                     <thead>
                     <tr>
                         <th class="text-center"><h5>priority</h5></th>
