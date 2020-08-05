@@ -5,7 +5,7 @@ import com.dev.openforum.Service.TemplateService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Service;
 
-@Service
+
 public class DataFetcher implements CommandLineRunner {
 
     private final TemplateService templateService;

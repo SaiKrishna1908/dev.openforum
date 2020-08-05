@@ -1,0 +1,14 @@
+First create a user using unix command: adduser {username}
+switch to the user using unix command: su - {username}
+execute psql
+list all databases using: \l
+use a database : \c {databasename}
+list all tables using : \d
+use  a table : \d {tablename}
+
+
+when first initializing database set spring.jpa.hibernate.ddl-auto=create-drop
+copy script in openforumschema.sql and execute query in plsql, ie create database
+set spring.jpa.hibernate.ddl-auto=validate
+
+
